@@ -1,5 +1,6 @@
 #include "mll.h"
 
+// Mengalokasikan memori untuk node Child baru dan mengisi datanya.
 addressChild createElmChild(infotypeChild data) {
     addressChild C = new elmChild;
     C->info = data;
@@ -7,6 +8,7 @@ addressChild createElmChild(infotypeChild data) {
     return C;
 }
 
+// Menyisipkan node Child baru di awal list Child milik Parent P.
 void insertFirstChild(addressParent P, addressChild C) {
     if (P->firstChild == NULL) {
         P->firstChild = C;
@@ -16,6 +18,7 @@ void insertFirstChild(addressParent P, addressChild C) {
     }
 }
 
+// Menyisipkan node Child baru di akhir list Child milik Parent P.
 void insertLastChild(addressParent P, addressChild C) {
     if (P->firstChild == NULL) {
         insertFirstChild(P, C);
@@ -28,11 +31,13 @@ void insertLastChild(addressParent P, addressChild C) {
     }
 }
 
+// Menyisipkan node Child baru setelah node Prec.
 void insertAfterChild(addressChild Prec, addressChild C) {
     C->next = Prec->next;
     Prec->next = C;
 }
 
+// Menyisipkan Child jika nama aktor/karakter belum ada (unik), insert di akhir.
 void insertChildUnique(addressParent P, addressChild C) {
     addressChild Q = P->firstChild;
     bool found = false;
@@ -50,6 +55,7 @@ void insertChildUnique(addressParent P, addressChild C) {
     }
 }
 
+// Menghapus node Child pertama dari Parent P.
 void deleteFirstChild(addressParent P, addressChild &C) {
     C = P->firstChild;
     if (P->firstChild != NULL) {
@@ -58,6 +64,7 @@ void deleteFirstChild(addressParent P, addressChild &C) {
     }
 }
 
+// Menghapus node Child terakhir dari Parent P.
 void deleteLastChild(addressParent P, addressChild &C) {
     if (P->firstChild != NULL) {
         if (P->firstChild->next == NULL) {
@@ -75,6 +82,7 @@ void deleteLastChild(addressParent P, addressChild &C) {
     }
 }
 
+// Menghapus node Child yang berada setelah node Prec.
 void deleteAfterChild(addressChild Prec, addressChild &C) {
     C = Prec->next;
     if (C != NULL) {
@@ -83,6 +91,7 @@ void deleteAfterChild(addressChild Prec, addressChild &C) {
     }
 }
 
+// Mencari dan menghapus node Child tertentu berdasarkan ID Aktor.
 void deleteSpecificChild(addressParent P, string idAktor) {
     addressChild C = P->firstChild;
     addressChild Prec = NULL;
@@ -108,6 +117,7 @@ void deleteSpecificChild(addressParent P, string idAktor) {
     }
 }
 
+// Menghapus semua node Child yang memiliki tipe peran tertentu (misal: Cameo).
 void deleteChildByCondition(addressParent P, string tipePeran) {
     addressChild C = P->firstChild;
     addressChild Prec = NULL;
@@ -131,6 +141,7 @@ void deleteChildByCondition(addressParent P, string tipePeran) {
     }
 }
 
+// Mencari alamat node Child berdasarkan nama aktor atau ID aktor.
 addressChild findChild(addressParent P, string namaAktor) {
     addressChild C = P->firstChild;
     while (C != NULL) {
@@ -142,6 +153,7 @@ addressChild findChild(addressParent P, string namaAktor) {
     return NULL;
 }
 
+// Menampilkan semua data Child yang terhubung ke Parent P.
 void printChildrenUnique(addressParent P) {
     addressChild C = P->firstChild;
     if (C == NULL) {
@@ -156,6 +168,7 @@ void printChildrenUnique(addressParent P) {
     }
 }
 
+// Menghitung total gaji seluruh aktor dalam satu film (Parent).
 double hitungTotalGaji(addressParent P) {
     double total = 0;
     addressChild C = P->firstChild;
@@ -166,6 +179,7 @@ double hitungTotalGaji(addressParent P) {
     return total;
 }
 
+// Mencari aktor dengan gaji tertinggi dalam satu film (Parent).
 addressChild findAktorTermahal(addressParent P) {
     addressChild C = P->firstChild;
     addressChild MaxNode = NULL;

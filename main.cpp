@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// Menampilkan menu Admin (Producer) untuk pengelolaan data (Insert/Delete).
 void menuProducer(ListParent &L) {
     int choice = -1;
     while (choice != 0) {
@@ -130,6 +131,7 @@ void menuProducer(ListParent &L) {
     }
 }
 
+// Menampilkan menu Analyst (Auditor) untuk pencarian dan laporan data (Read/Search).
 void menuAuditor(ListParent &L) {
     int choice = -1;
     while (choice != 0) {
@@ -216,6 +218,7 @@ void menuAuditor(ListParent &L) {
     }
 }
 
+// Main menu.
 int main() {
     ListParent L;
     createListParent(L);
