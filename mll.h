@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#ADT Parent
+//ADT Parent
 struct elmChild;
 typedef struct elmChild *addressChild;
 
@@ -34,7 +34,7 @@ struct ListParent {
     addressParent last;
 };
 
-#ADT Child
+//ADT Child
 struct infotypeChild {
     string idAktor;
     string namaAktor;
@@ -50,7 +50,7 @@ struct elmChild {
     addressChild next;
 };
 
-# Parent functions and procedures
+//Parent functions and procedures
 void createListParent(ListParent &L);
 addressParent createElmParent(infotypeParent data);
  
@@ -68,7 +68,7 @@ void deleteSpecificParent(ListParent &L, string idFilm);
 addressParent findParent(ListParent L, string judulAtauID);
 void printAllParents(ListParent L);
 
-#Child functions and procedures
+//Child functions and procedures
 addressChild createElmChild(infotypeChild data);
 
 void insertChildUnique(addressParent P, addressChild C);

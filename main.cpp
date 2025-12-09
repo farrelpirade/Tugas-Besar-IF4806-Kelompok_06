@@ -142,7 +142,8 @@ void menuAuditor(ListParent &L) {
         cout << "4. [COMPUTE] Cari 'Star Actor' (Max Gaji)" << endl;
         cout << "5. [VIEW]    Lihat Daftar Film Saja" << endl;
         cout << "0. Kembali ke Menu Utama" << endl;
-        cout << ">> Pilih: "; cin >> choice;
+        cout << ">> Pilih: "; 
+        cin >> choice;
 
         if (choice == 1) {
             string key;
