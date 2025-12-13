@@ -6,7 +6,6 @@
 
 using namespace std;
 
-//ADT Parent
 struct elmChild;
 typedef struct elmChild *addressChild;
 
@@ -34,7 +33,6 @@ struct ListParent {
     addressParent last;
 };
 
-//ADT Child
 struct infotypeChild {
     string idAktor;
     string namaAktor;

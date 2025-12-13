@@ -74,7 +74,7 @@ void menuProducer(ListParent &L) {
                 cin >> c.namaAktor;
                 cout << "Nama Karakter : "; 
                 cin >> c.namaKarakter;
-                cout << "Tipe Peran    : "; 
+                cout << "Tipe Peran    : [Main/Support/Cameo] "; 
                 cin >> c.tipePeran;
                 cout << "Gaji ($Juta)  : "; 
                 cin >> c.gaji;
