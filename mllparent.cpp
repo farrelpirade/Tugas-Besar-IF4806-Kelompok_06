@@ -1,12 +1,10 @@
 #include "mll.h"
 
-// Menginisialisasi list parent (DLL) dengan pointer first dan last NULL.
 void createListParent(ListParent &L) {
     L.first = NULL;
     L.last = NULL;
 }
 
-// Mengalokasikan memori untuk node Parent baru dan mengisi datanya.
 addressParent createElmParent(infotypeParent data) {
     addressParent P = new elmParent;
     P->info = data;
@@ -15,8 +13,6 @@ addressParent createElmParent(infotypeParent data) {
     P->firstChild = NULL;
     return P;
 }
-
-// Menyisipkan node Parent baru di awal list (First).
 void insertFirstParent(ListParent &L, addressParent P) {
     if (L.first == NULL) {
         L.first = P;
@@ -28,7 +24,6 @@ void insertFirstParent(ListParent &L, addressParent P) {
     }
 }
 
-// Menyisipkan node Parent baru di akhir list (Last).
 void insertLastParent(ListParent &L, addressParent P) {
     if (L.first == NULL) {
         insertFirstParent(L, P);
@@ -39,7 +34,6 @@ void insertLastParent(ListParent &L, addressParent P) {
     }
 }
 
-// Menyisipkan node Parent baru setelah node Prec.
 void insertAfterParent(ListParent &L, addressParent Prec, addressParent P) {
     P->next = Prec->next;
     P->prev = Prec;
@@ -47,7 +41,6 @@ void insertAfterParent(ListParent &L, addressParent Prec, addressParent P) {
     Prec->next = P;
 }
 
-// Menyisipkan Parent secara terurut berdasarkan Tahun Rilis (Ascending).
 void insertParentSorted(ListParent &L, addressParent P) {
     if (L.first == NULL || P->info.tahunRilis < L.first->info.tahunRilis) {
         insertFirstParent(L, P);
@@ -65,7 +58,6 @@ void insertParentSorted(ListParent &L, addressParent P) {
     }
 }
 
-// Menghapus node Parent pertama dari list.
 void deleteFirstParent(ListParent &L, addressParent &P) {
     P = L.first;
     if (L.first != NULL) {
@@ -80,7 +72,6 @@ void deleteFirstParent(ListParent &L, addressParent &P) {
     }
 }
 
-// Menghapus node Parent terakhir dari list.
 void deleteLastParent(ListParent &L, addressParent &P) {
     P = L.last;
     if (L.first != NULL) {
@@ -94,7 +85,6 @@ void deleteLastParent(ListParent &L, addressParent &P) {
     }
 }
 
-// Menghapus node Parent yang berada setelah node Prec.
 void deleteAfterParent(ListParent &L, addressParent Prec, addressParent &P) {
     P = Prec->next;
     if (P != NULL) {
@@ -109,7 +99,6 @@ void deleteAfterParent(ListParent &L, addressParent Prec, addressParent &P) {
     }
 }
 
-// Mencari dan menghapus node Parent tertentu berdasarkan ID Film.
 void deleteSpecificParent(ListParent &L, string idFilm) {
     addressParent P = findParent(L, idFilm);
     if (P != NULL) {
@@ -126,7 +115,6 @@ void deleteSpecificParent(ListParent &L, string idFilm) {
     }
 }
 
-// Menghapus node Parent yang memiliki rating di bawah batas tertentu (minRating).
 void deleteParentByCondition(ListParent &L, double minRating) {
     addressParent P = L.first;
     addressParent nextNode;
@@ -150,7 +138,6 @@ void deleteParentByCondition(ListParent &L, double minRating) {
     }
 }
 
-// Mencari alamat node Parent berdasarkan Judul atau ID Film.
 addressParent findParent(ListParent L, string judulAtauID) {
     addressParent P = L.first;
     while (P != NULL) {
@@ -162,7 +149,6 @@ addressParent findParent(ListParent L, string judulAtauID) {
     return NULL;
 }
 
-// Menampilkan seluruh data Parent yang ada di dalam list.
 void printAllParents(ListParent L) {
     addressParent P = L.first;
     cout << "================ DAFTAR FILM ================" << endl;

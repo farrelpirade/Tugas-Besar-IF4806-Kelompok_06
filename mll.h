@@ -50,7 +50,6 @@ struct elmChild {
     addressChild next;
 };
 
-//Parent functions and procedures
 void createListParent(ListParent &L);
 addressParent createElmParent(infotypeParent data);
  
@@ -68,7 +67,6 @@ void deleteSpecificParent(ListParent &L, string idFilm);
 addressParent findParent(ListParent L, string judulAtauID);
 void printAllParents(ListParent L);
 
-//Child functions and procedures
 addressChild createElmChild(infotypeChild data);
 
 void insertChildUnique(addressParent P, addressChild C);
