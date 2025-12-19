@@ -4,7 +4,7 @@
 >
 > Rancanglah multi-linked list yang memodelkan film, aktor/aktris, dan hubungan di antara mereka. Seorang aktor dapat bermain peran di banyak film, dan satu film dapat diperankan oleh banyak aktor/aktris. Program ditujukan untuk mengelola daftar artis yang berperan dalam suatu film serta memantau performanya.
 
-## 📝 Deskripsi Proyek
+## Deskripsi Proyek
 
 Program ini mengelola data dengan hubungan **Many-to-Many** (Banyak ke Banyak), di mana:
 
@@ -13,19 +13,19 @@ Program ini mengelola data dengan hubungan **Many-to-Many** (Banyak ke Banyak), 
 
 Sistem ini memisahkan peran pengguna menjadi dua mode: **Producer (Admin)** untuk pengelolaan data, dan **Auditor (Analyst)** untuk pelaporan dan analisis data.
 
-## 📂 Struktur File
+## Struktur File
 
 - `main.cpp`: File utama yang berisi menu interaksi pengguna (Producer & Auditor).
 - `mll.h`: Header file yang mendefinisikan tipe data abstrak (ADT), struktur data, dan deklarasi fungsi.
 - `mllparent.cpp`: Implementasi fungsi primitif untuk pengelolaan data Film (Parent).
 - `mllChild.cpp`: Implementasi fungsi primitif untuk pengelolaan data Aktor (Child) dan Relasi.
 
-## ⚙️ Prasyarat
+## Prasyarat
 
 - Compiler C++ (Misalnya GCC/G++).
 - **IDE Code::Blocks**
 
-## 🚀 Cara Kompilasi dan Menjalankan
+## Cara Kompilasi dan Menjalankan
 
 ### 1. Menggunakan Code::Blocks IDE (Utama)
 
